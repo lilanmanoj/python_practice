@@ -9,32 +9,31 @@ def getInput():
 
 def checkIsPrimeNumber(n):
     divisorList = []
-    i = 1
+    i = 2
     
-    while (i <= n):
-        if (n % i) == 0:
-            divisorList.append(i)
+    if (n >= 2):
+        while (i <= n):
+            if (n % i) == 0:
+                divisorList.append(i)
+            
+            i += 1
         
-        i += 1
-        
-    return len(divisorList) == 2
+    return len(divisorList) == 1
 
-def primes(n):
+def primesLessThan(n):
     primeNumberList = []
-    currentNumber = 2;
     
     if (n > 1):
-        while (len(primeNumberList) < n):
-            isPrime = checkIsPrimeNumber(currentNumber)
+        for num in range(1,n):
+            isPrime = checkIsPrimeNumber(num)
             
             if (isPrime):
-                primeNumberList.append(currentNumber)
-                
-            currentNumber += 1
+                primeNumberList.append(num)
     
-    return len(primeNumberList)
+    return primeNumberList
 
 n = getInput()
-primesCount = primes(n)
+primes = primesLessThan(n)
 
-print (primesCount)
+print ("Prime numbers count:", len(primes), sep = "\n", end = "\n\n")
+print ("Prime numbers:", primes, sep = "\n", end = "\n")
