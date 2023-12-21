@@ -6,7 +6,7 @@ Created on Sun Dec 17 10:59:32 2023
 @author: lilanmanoj
 
 Python Conditional Statement Tutorial
-Exercise 2
+Exercise 3
 """
 
 marks = int(input("Enter marks: "))
